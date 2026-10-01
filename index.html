@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10251d">
+
+<meta name="description" content="Free financial calculators for India: EMI, home loan, SIP, debt payoff, FD, salary, compound interest, budget and emergency fund planning.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://ajayjaspal-ai.github.io/smart-money/">
+  <meta name="author" content="Smart Money">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Smart Money – Free Financial Calculators &amp; Money Planning Tools">
+<meta property="og:description" content="Free financial calculators for India: EMI, home loan, SIP, debt payoff, FD, salary, compound interest, budget and emergency fund planning.">
+<meta property="og:url" content="https://ajayjaspal-ai.github.io/smart-money/">
+<meta property="og:site_name" content="Smart Money">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Smart Money – Free Financial Calculators &amp; Money Planning Tools">
+<meta name="twitter:description" content="Free financial calculators for India: EMI, home loan, SIP, debt payoff, FD, salary, compound interest, budget and emergency fund planning.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Smart Money",
+  "url": "https://ajayjaspal-ai.github.io/smart-money/",
+  "description": "Free financial calculators for India: EMI, home loan, SIP, debt payoff, FD, salary, compound interest, budget and emergency fund planning.",
+  "inLanguage": "en-IN"
+}
+</script>
+
+<title>Smart Money – Free Financial Calculators &amp; Money Planning Tools</title>
+<style>
+:root{
+  --ink:#10251d;
+  --green:#176b45;
+  --green-dark:#0d4d32;
+  --mint:#e5f4e9;
+  --mint-strong:#cfe9d7;
+  --paper:#f5f8f6;
+  --white:#ffffff;
+  --muted:#68776f;
+  --line:#dfe9e2;
+  --shadow:0 10px 30px rgba(16,37,29,.07);
+  --shadow-hover:0 16px 36px rgba(16,37,29,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(16,37,29,.96);
+  color:#fff;
+  padding:15px clamp(18px,5vw,64px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+  box-shadow:0 2px 16px rgba(0,0,0,.12);
+  backdrop-filter:blur(10px);
+}
+.logo{
+  font-weight:900;
+  font-size:24px;
+  letter-spacing:-.8px;
+  white-space:nowrap;
+}
+.logo span{color:#78e0a5}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{
+  color:#eaf5ee;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:650;
+  opacity:.92;
+}
+nav a:hover{color:#78e0a5}
+.hero{
+  position:relative;
+  overflow:hidden;
+  padding:clamp(48px,8vw,92px) clamp(18px,5vw,64px);
+  background:
+    radial-gradient(circle at 85% 20%,rgba(120,224,165,.28),transparent 28%),
+    linear-gradient(135deg,#e2f3e8 0%,#f7faf7 58%,#eef6f0 100%);
+  border-bottom:1px solid var(--line);
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  width:260px;height:260px;
+  right:-80px;bottom:-110px;
+  border:42px solid rgba(23,107,69,.06);
+  border-radius:50%;
+}
+.hero h1{
+  position:relative;
+  z-index:1;
+  font-size:clamp(36px,6vw,62px);
+  line-height:1.02;
+  letter-spacing:-2.4px;
+  margin:14px 0 18px;
+  max-width:800px;
+}
+.hero p{
+  position:relative;
+  z-index:1;
+  max-width:680px;
+  color:#40574b;
+  font-size:18px;
+  margin:0 0 14px;
+}
+.hero strong{position:relative;z-index:1;font-size:17px}
+.pill{
+  position:relative;
+  z-index:1;
+  display:inline-flex;
+  align-items:center;
+  background:var(--mint-strong);
+  color:#175b3b;
+  padding:7px 12px;
+  border-radius:99px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.4px;
+}
+main{max-width:1180px;margin:auto;padding:42px clamp(18px,5vw,64px)}
+.section-head{margin-bottom:22px}
+.section-head h2{margin:0;font-size:28px;letter-spacing:-.5px}
+.section-head p{color:var(--muted);margin:5px 0}
+.tools{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));
+  gap:20px;
+}
+.card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:24px;
+  box-shadow:var(--shadow);
+  min-width:0;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.card:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-hover);
+  border-color:#cfe0d4;
+}
+.card h3{margin:0 0 14px;font-size:21px;letter-spacing:-.3px}
+.tag{
+  display:inline-block;
+  font-size:11px;
+  letter-spacing:.8px;
+  color:var(--green);
+  font-weight:850;
+  margin-bottom:3px;
+}
+label{display:block;font-size:13px;font-weight:700;margin:15px 0 6px}
+input,select{
+  width:100%;
+  padding:12px 13px;
+  border:1px solid #d2ded6;
+  border-radius:11px;
+  font:inherit;
+  background:#fff;
+  color:var(--ink);
+  outline:none;
+  transition:border-color .15s,box-shadow .15s;
+}
+input:focus,select:focus{
+  border-color:#4b9b70;
+  box-shadow:0 0 0 3px rgba(75,155,112,.13);
+}
+button{
+  border:0;
+  border-radius:11px;
+  background:linear-gradient(135deg,var(--green),var(--green-dark));
+  color:#fff;
+  font-weight:800;
+  padding:12px 16px;
+  font:inherit;
+  cursor:pointer;
+  width:100%;
+  margin-top:16px;
+  box-shadow:0 6px 14px rgba(23,107,69,.16);
+  transition:transform .15s,box-shadow .15s;
+}
+button:hover{transform:translateY(-1px);box-shadow:0 9px 18px rgba(23,107,69,.22)}
+button.secondary{
+  background:#edf6ef;
+  color:var(--green);
+  border:1px solid #d4e7d9;
+  box-shadow:none;
+}
+.result{
+  background:linear-gradient(135deg,#e6f5eb,#f2f8f3);
+  border:1px solid #d5e9da;
+  padding:15px;
+  border-radius:13px;
+  margin-top:15px;
+  font-size:14px;
+  min-height:65px;
+  overflow-wrap:anywhere;
+}
+.big{font-size:27px;font-weight:900;color:var(--green);display:block;line-height:1.25}
+.note{color:var(--muted);font-size:12px}
+.coming{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(155px,1fr));
+  gap:11px;
+}
+.coming div,.coming a{
+  background:#f7faf7;
+  border:1px solid #e1ebe3;
+  padding:14px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:750;
+}
+.coming a{
+  color:var(--green);
+  text-decoration:none;
+  display:block;
+  transition:background .15s,border-color .15s,transform .15s;
+}
+.coming a:hover{
+  background:#edf7ef;
+  border-color:#cce2d2;
+  transform:translateY(-1px);
+}
+.coming a:focus{outline:3px solid rgba(75,155,112,.2);outline-offset:2px}
+#tools h3{display:flex;align-items:center;gap:8px}
+.debt-row{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr 1fr auto;
+  gap:8px;
+  align-items:end;
+  padding:12px 0;
+  border-bottom:1px solid var(--line)
+}
+.debt-row label{margin-top:0}
+.debt-row button{margin:0;width:auto;padding:10px 12px;background:#fbeaea;color:#9b2828;box-shadow:none}
+.debt-row input{padding:10px;font-size:14px}
+.debt-head{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr 1fr auto;
+  gap:8px;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:800;
+  text-transform:uppercase;
+}
+.summary-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:10px;
+  margin-top:12px
+}
+.summary-grid div{
+  background:#fff;
+  border:1px solid #d8e9dc;
+  border-radius:10px;
+  padding:12px
+}
+.summary-grid small{display:block;color:var(--muted);font-size:11px}
+.summary-grid strong{font-size:18px}
+.table-wrap{overflow-x:auto;margin-top:12px}
+table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+th,td{text-align:left;padding:9px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{background:#f1f6f1}
+footer{
+  margin-top:10px;
+  padding:28px clamp(18px,5vw,64px);
+  background:#10251d;
+  color:#c8d7cd;
+  font-size:12px;
+  text-align:center;
+}
+@media(max-width:650px){
+  header{position:relative}
+  nav{gap:12px}
+  .hero h1{letter-spacing:-1.6px}
+  .card{padding:20px;border-radius:17px}
+  .debt-head{display:none}
+  .debt-row{grid-template-columns:1fr 1fr;gap:6px}
+  .debt-row .debt-name{grid-column:1/-1}
+  .debt-row button{grid-column:1/-1;width:100%}
+}
+@media(min-width:850px){.tools{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Smart Money financial dashboard styling */
+body{
+  background:
+    radial-gradient(circle at 8% 12%,rgba(23,107,69,.08),transparent 24%),
+    radial-gradient(circle at 92% 34%,rgba(37,99,235,.05),transparent 22%),
+    linear-gradient(180deg,#f4f8f5 0%,#eef4f0 100%);
+}
+header{
+  position:sticky;
+  top:0;
+  z-index:30;
+  padding:12px clamp(18px,5vw,64px);
+  background:rgba(10,29,22,.97);
+  border-bottom:1px solid rgba(120,224,165,.18);
+  box-shadow:0 6px 24px rgba(10,29,22,.18);
+}
+.brand-wrap{display:flex;align-items:baseline;gap:10px}
+.brand-sub{
+  color:#9db9aa;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1.2px;
+}
+.top-tabs{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:4px;
+  border-radius:14px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.10);
+}
+.top-tabs .tab{
+  color:#dcebe2;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:750;
+  padding:9px 13px;
+  border-radius:10px;
+  transition:background .15s,color .15s,transform .15s;
+  white-space:nowrap;
+}
+.top-tabs .tab:hover{background:rgba(120,224,165,.12);color:#fff}
+.top-tabs .tab.active{
+  background:#78e0a5;
+  color:#0e3d28;
+  box-shadow:0 4px 12px rgba(120,224,165,.18);
+}
+.hero{
+  min-height:270px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border-bottom:1px solid #d9e6dd;
+}
+.hero h1{max-width:850px}
+.hero p{max-width:760px}
+main{padding-top:34px}
+.section-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:20px;
+}
+.section-head h2{font-size:26px}
+.card{
+  position:relative;
+  overflow:hidden;
+}
+.card:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:3px;
+  background:linear-gradient(90deg,#176b45,#78e0a5,#cfe9d7);
+}
+#tools{
+  background:linear-gradient(145deg,#ffffff 0%,#f3f9f5 100%);
+}
+#tools .coming a{
+  min-height:68px;
+  display:flex;
+  align-items:center;
+}
+#about{
+  background:linear-gradient(145deg,#10251d 0%,#163c2b 100%);
+  color:#fff;
+}
+#about .tag{color:#78e0a5}
+#about h3{color:#fff}
+#about p{color:#d7e5dc}
+#about .note{color:#b9cbbf}
+.quick-strip{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin:0 0 24px;
+}
+.quick-strip div{
+  background:rgba(255,255,255,.78);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:12px 14px;
+  box-shadow:0 5px 18px rgba(16,37,29,.04);
+}
+.quick-strip strong{display:block;font-size:14px;color:var(--green)}
+.quick-strip span{font-size:11px;color:var(--muted)}
+@media(max-width:850px){
+  .brand-sub{display:none}
+  .top-tabs{width:100%;overflow-x:auto;justify-content:flex-start}
+  .top-tabs .tab{flex:0 0 auto}
+  .quick-strip{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:650px){
+  header{position:relative}
+  .brand-wrap{width:100%;justify-content:center}
+  .top-tabs{border-radius:12px}
+  .top-tabs .tab{font-size:12px;padding:8px 10px}
+  .hero{min-height:240px}
+  .section-head{display:block}
+}
+
+/* Finance visual layer */
+body{
+  background:
+    radial-gradient(circle at 10% 8%,rgba(23,107,69,.08),transparent 22%),
+    radial-gradient(circle at 92% 18%,rgba(212,175,55,.08),transparent 24%),
+    linear-gradient(180deg,#f4f8f5 0%,#edf4ef 100%);
+}
+.hero{
+  min-height:310px;
+  background:
+    linear-gradient(110deg,rgba(226,243,232,.98),rgba(248,250,247,.94)),
+    repeating-linear-gradient(0deg,transparent 0 31px,rgba(23,107,69,.035) 32px),
+    repeating-linear-gradient(90deg,transparent 0 31px,rgba(23,107,69,.025) 32px);
+}
+.hero:before{
+  content:"₹  ₹  ₹";
+  position:absolute;
+  right:4%;
+  top:18px;
+  color:rgba(23,107,69,.055);
+  font-size:78px;
+  font-weight:900;
+  letter-spacing:18px;
+  transform:rotate(-8deg);
+  pointer-events:none;
+}
+.hero:after{
+  content:"₹   ₹   ₹   ₹   ₹";
+  position:absolute;
+  right:-30px;
+  bottom:28px;
+  width:470px;
+  height:95px;
+  color:rgba(212,175,55,.10);
+  font-size:48px;
+  font-weight:900;
+  letter-spacing:12px;
+  transform:rotate(-9deg);
+  border:0;
+  border-radius:0;
+  pointer-events:none;
+}
+.hero h1,.hero p,.hero strong,.hero .pill{max-width:850px}
+.money-panel{
+  position:absolute;
+  right:clamp(20px,6vw,80px);
+  top:50%;
+  transform:translateY(-50%);
+  width:300px;
+  height:190px;
+  border-radius:24px;
+  background:linear-gradient(145deg,rgba(16,37,29,.96),rgba(23,107,69,.94));
+  border:1px solid rgba(120,224,165,.22);
+  box-shadow:0 20px 45px rgba(16,37,29,.18);
+  color:#fff;
+  padding:22px;
+  overflow:hidden;
+}
+.money-panel:before{
+  content:"₹";
+  position:absolute;
+  right:-12px;
+  top:-36px;
+  font-size:170px;
+  line-height:1;
+  font-weight:900;
+  color:rgba(120,224,165,.10);
+}
+.money-panel .mp-label{
+  color:#b9d7c4;
+  font-size:11px;
+  letter-spacing:1.1px;
+  font-weight:800;
+}
+.money-panel .mp-value{
+  font-size:32px;
+  font-weight:900;
+  margin:5px 0 12px;
+}
+.money-panel .mp-line{
+  height:42px;
+  position:relative;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.money-panel .mp-line:after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:4px;height:35px;
+  background:linear-gradient(135deg,transparent 0 8%,rgba(120,224,165,.9) 9% 10%,transparent 11% 24%,rgba(120,224,165,.9) 25% 26%,transparent 27% 40%,rgba(120,224,165,.9) 41% 42%,transparent 43% 57%,rgba(120,224,165,.9) 58% 59%,transparent 60% 72%,rgba(120,224,165,.9) 73% 74%,transparent 75%);
+  clip-path:polygon(0 85%,12% 72%,25% 76%,39% 48%,52% 58%,65% 25%,78% 38%,90% 8%,100% 0,100% 100%,0 100%);
+  opacity:.9;
+}
+.money-panel .mp-foot{
+  display:flex;
+  justify-content:space-between;
+  margin-top:10px;
+  color:#b9d7c4;
+  font-size:11px;
+}
+.card:after{
+  content:"₹";
+  position:absolute;
+  right:-10px;
+  bottom:-28px;
+  font-size:92px;
+  font-weight:900;
+  color:rgba(23,107,69,.025);
+  pointer-events:none;
+}
+.quick-strip div{
+  position:relative;
+  overflow:hidden;
+}
+.quick-strip div:after{
+  content:"₹";
+  position:absolute;
+  right:8px;
+  bottom:-13px;
+  font-size:55px;
+  font-weight:900;
+  color:rgba(23,107,69,.06);
+}
+@media(max-width:950px){
+  .money-panel{position:relative;right:auto;top:auto;transform:none;margin:24px 0 0;width:min(100%,340px)}
+  .hero{min-height:0}
+  .hero:before,.hero:after{opacity:.5}
+}
+@media(max-width:650px){
+  .money-panel{width:100%;height:155px;padding:18px}
+  .money-panel .mp-value{font-size:27px}
+}
+
+/* Fix hero overlap: use a responsive two-column layout instead of absolute positioning */
+.hero{
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) 320px;
+  align-items:center;
+  column-gap:48px;
+  min-height:320px;
+}
+.hero h1,.hero p,.hero strong,.hero .pill{grid-column:1;max-width:850px}
+.money-panel{
+  position:relative !important;
+  right:auto !important;
+  top:auto !important;
+  transform:none !important;
+  grid-column:2;
+  grid-row:1 / span 5;
+  width:100%;
+  margin:0 !important;
+}
+@media(max-width:950px){
+  .hero{
+    display:block !important;
+    min-height:0;
+  }
+  .money-panel{
+    width:min(100%,340px);
+    margin:24px 0 0 !important;
+  }
+}
+@media(max-width:650px){
+  .money-panel{
+    width:100%;
+    height:155px;
+    padding:18px;
+  }
+}
+</style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4183351109071590"
+     crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-4183351109071590">
+</head>
+<body>
+<header>
+  <div class="brand-wrap">
+    <div class="logo">Smart<span>Money</span></div>
+    <div class="brand-sub">PERSONAL FINANCE DASHBOARD</div>
+  </div>
+  <nav class="top-tabs" aria-label="Main navigation">
+    <a class="tab active" href="#home">⌂ Home</a>
+    <a class="tab" href="#calculators">▦ Calculators</a>
+    <a class="tab" href="#debt">↘ Debt Planner</a>
+    <a class="tab" href="#tools">✦ More Tools</a>
+    <a class="tab" href="#about">ⓘ About</a>
+  </nav>
+</header>
+<section class="hero" id="home"><span class="pill">FREE FINANCIAL TOOLS</span><h1>Make your money work smarter.</h1><p>Simple calculators to understand loans, savings and your financial future — built for everyday decisions.</p><strong>आपके पैसों की प्लानिंग, अब आसान।</strong>
+<div class="money-panel" aria-hidden="true">
+  <div class="mp-label">SMART MONEY • FINANCIAL VIEW</div>
+  <div class="mp-value">₹ PLAN • GROW • SAVE</div>
+  <div class="mp-line"></div>
+  <div class="mp-foot"><span>Money clarity</span><span>↗ Long-term growth</span></div>
+</div>
+</section>
+<main id="calculators"><div class="quick-strip" aria-label="Smart Money highlights">
+  <div><strong>₹ Smart Planning</strong><span>Loans • Savings • Wealth</span></div>
+  <div><strong>⚡ Instant Estimates</strong><span>Know your numbers</span></div>
+  <div><strong>📱 Money Dashboard</strong><span>Phone & desktop ready</span></div>
+  <div><strong>📈 Financial Growth</strong><span>Plan • track • improve</span></div>
+</div><div class="section-head"><h2>Financial Calculators</h2><p>Enter your details to get an instant estimate.</p></div>
+<div class="tools">
+<section class="card"><span class="tag">LOAN PLANNER</span><h3>🏠 EMI Calculator</h3>
+<label for="loan">Loan amount (₹)</label><input id="loan" type="number" min="1" value="1000000">
+<label for="rate">Annual interest rate (%)</label><input id="rate" type="number" min="0" step=".1" value="9">
+<label for="years">Tenure (years)</label><input id="years" type="number" min=".1" step=".5" value="20">
+<button onclick="calcEMI()">Calculate EMI</button><div class="result" id="emiResult" aria-live="polite">Your estimate will appear here.</div></section><section class="card">
+<span class="tag">EMI GUIDE</span>
+<h3>📘 EMI Calculator — How Does It Work?</h3>
+
+<p>An EMI (Equated Monthly Instalment) is the fixed monthly amount paid towards a loan. Your EMI depends mainly on the loan amount, interest rate and repayment tenure.</p>
+
+<h4>How EMI is calculated</h4>
+<p>The EMI calculation uses the loan amount, monthly interest rate and total number of monthly payments. A longer tenure can reduce the monthly EMI, but it can increase the total interest paid over the loan period.</p>
+
+<h4>Example</h4>
+<p>For example, a ₹10 lakh loan at 9% annual interest for 20 years will have a different EMI and total interest cost compared with a shorter tenure. Change the amount, interest rate and tenure above to compare different scenarios.</p>
+
+<h4>What affects your EMI?</h4>
+<ul>
+<li><strong>Loan amount:</strong> A higher loan generally means a higher EMI.</li>
+<li><strong>Interest rate:</strong> A higher rate generally increases EMI and total interest.</li>
+<li><strong>Tenure:</strong> A longer tenure can reduce monthly EMI but may increase total interest.</li>
+</ul>
+
+<h4>Before taking a loan</h4>
+<p>Compare the interest rate, processing charges, insurance and other applicable fees. Also check whether the loan has fixed or floating interest and understand the lender's prepayment conditions.</p>
+
+<p class="note">Smart Money EMI Calculator provides an educational estimate. Actual EMI, fees, interest and loan terms depend on the lender and final loan agreement.</p>
+</section>
+<section class="card"><span class="tag">HOME BUYER PLANNER</span><h3>🏡 Home Loan Calculator</h3>
+<label for="homePrice">Property price (₹)</label><input id="homePrice" type="number" min="1" value="5000000">
+<label for="downPayment">Down payment (₹)</label><input id="downPayment" type="number" min="0" value="1000000">
+<label for="homeRate">Annual interest rate (%)</label><input id="homeRate" type="number" min="0" step=".1" value="8.5">
+<label for="homeYears">Loan tenure (years)</label><input id="homeYears" type="number" min=".1" step=".5" value="20">
+<button onclick="calcHome()">Calculate Home Loan</button><div class="result" id="homeResult" aria-live="polite">Enter property details to estimate your home loan.</div>
+<p class="note">Estimate excludes stamp duty, registration, insurance and lender fees. Actual eligibility and terms depend on the lender.</p></section><section class="card">
+  <span class="tag">HOME LOAN GUIDE</span>
+  <h3>🏠 Home Loan Calculator — How Does It Work?</h3>
+
+  <p>A home loan EMI depends mainly on the loan amount, interest rate and repayment tenure. Use this calculator to estimate your monthly EMI, total interest and overall repayment before comparing loan options.</p>
+
+  <h4>What affects your home loan EMI?</h4>
+  <ul>
+    <li><strong>Loan amount:</strong> A larger loan generally results in a higher monthly EMI.</li>
+    <li><strong>Interest rate:</strong> A higher interest rate generally increases the EMI and total interest payable.</li>
+    <li><strong>Loan tenure:</strong> A longer tenure can reduce the monthly EMI but may increase the total interest paid.</li>
+  </ul>
+
+  <h4>Example</h4>
+  <p>Suppose you take a ₹30 lakh home loan at 8.5% annual interest for 20 years. This calculator can help you estimate the monthly EMI and understand how the repayment changes when you adjust the loan amount, interest rate or tenure.</p>
+
+  <h4>Before choosing a home loan</h4>
+  <p>Compare the interest rate, processing charges, prepayment conditions and other applicable costs. Also check whether the interest rate is fixed or floating and read the lender's terms carefully before accepting the loan.</p>
+
+  <h4>Does a longer tenure always save money?</h4>
+  <p>A longer tenure can make the monthly EMI easier to manage, but it can also result in more total interest over the full loan period. Consider both the monthly EMI and total repayment when comparing options.</p>
+
+  <p class="note">Smart Money Home Loan Calculator provides an educational estimate. Actual EMI, interest, fees, taxes and other costs depend on the lender and the final loan agreement.</p>
+</section>
+<section class="card"><span class="tag">INVESTMENT PLANNER</span><h3>📈 SIP Calculator</h3>
+<label for="sipAmt">Monthly investment (₹)</label><input id="sipAmt" type="number" min="1" value="5000">
+<label for="sipRate">Expected annual return (%)</label><input id="sipRate" type="number" min="0" step=".1" value="12">
+<label for="sipYears">Investment period (years)</label><input id="sipYears" type="number" min=".1" step=".5" value="15">
+<button onclick="calcSIP()">Calculate SIP</button><div class="result" id="sipResult" aria-live="polite">Your estimate will appear here.</div><p class="note">Returns are illustrative, not guaranteed.</p></section><section class="card">
+  <span class="tag">SIP GUIDE</span>
+  <h3>📈 SIP Calculator — How Does It Work?</h3>
+
+  <p>A Systematic Investment Plan (SIP) allows you to invest a fixed amount regularly in a mutual fund or other market-linked investment. This calculator helps estimate how your investment could grow over time.</p>
+
+  <h4>How SIP returns are estimated</h4>
+  <p>The calculation uses your monthly investment, assumed annual return and investment period. The estimated value benefits from compounding, but actual market returns can be higher or lower.</p>
+
+  <h4>Example</h4>
+  <p>If you invest ₹5,000 every month for 15 years and assume an annual return of 12%, this calculator estimates the potential future value, total amount invested and estimated gain.</p>
+
+  <h4>What affects your SIP growth?</h4>
+  <ul>
+    <li><strong>Monthly investment:</strong> Investing more each month can increase the potential future value.</li>
+    <li><strong>Investment period:</strong> A longer period gives compounding more time to work.</li>
+    <li><strong>Return assumption:</strong> A higher assumed return increases the estimate, but returns are not guaranteed.</li>
+  </ul>
+
+  <h4>Why use a SIP calculator?</h4>
+  <p>A SIP calculator can help you compare different monthly investment amounts and time periods before making an investment plan. Use realistic return assumptions and review your investments regularly.</p>
+
+  <p class="note">This calculator provides an illustrative estimate, not a guaranteed return. Mutual fund and market-linked investments are subject to market risks. Actual returns may differ significantly.</p>
+</section>
+<section class="card">
+  <span class="tag">DEBT-FREE GUIDE</span>
+  <h3>💳 Debt-Free Planner — How Does It Work?</h3>
+
+  <p>A debt-free plan helps you organize your outstanding balances, understand your monthly repayment capacity and create a realistic path toward reducing debt.</p>
+
+  <h4>How to start your debt repayment plan</h4>
+  <p>Begin by listing each debt with its outstanding balance, interest rate, minimum payment and due date. Knowing the full picture makes it easier to decide how much you can consistently allocate toward repayment.</p>
+
+  <h4>Two common repayment approaches</h4>
+  <ul>
+    <li><strong>Debt avalanche:</strong> Focus additional payments on the debt with the highest interest rate while maintaining required payments on other debts.</li>
+    <li><strong>Debt snowball:</strong> Focus additional payments on the smallest outstanding balance first while maintaining required payments on other debts.</li>
+  </ul>
+
+  <h4>Why interest rate matters</h4>
+  <p>High-interest debt can grow more quickly and may cost more over time. Paying more than the minimum, when affordable, can reduce the outstanding balance faster and potentially reduce future interest costs.</p>
+
+  <h4>Example</h4>
+  <p>If you have multiple debts, compare their balances, interest rates and minimum payments before deciding how to allocate any extra repayment amount. Use this planner to understand how different repayment amounts can affect your estimated debt-free timeline.</p>
+
+  <h4>Stay consistent</h4>
+  <p>A realistic repayment plan should fit your monthly budget. Avoid taking on additional high-cost debt where possible, keep required payments up to date and review your progress regularly.</p>
+
+  <p class="note">Smart Money Debt-Free Planner is an educational planning tool. Actual repayment time and interest costs depend on your lender, interest rate, fees, payment dates and future borrowing.</p>
+</section>
+<section class="card" id="debt"><span class="tag">DEBT PAYOFF PLANNER</span><h3>💸 Debt-Free Planner</h3>
+<p class="note">Add each debt's current balance, annual interest rate and required monthly minimum payment. Add any extra amount you can pay each month.</p>
+<div class="debt-head"><span>Debt name</span><span>Balance ₹</span><span>APR %</span><span>Min. ₹/mo</span><span></span></div>
+<div id="debtRows"></div>
+<button class="secondary" type="button" onclick="addDebt()">+ Add another debt</button>
+<label for="extra">Extra amount available per month (₹)</label><input id="extra" type="number" min="0" value="0">
+<label for="strategy">Payoff strategy</label><select id="strategy"><option value="avalanche">Avalanche — highest interest first</option><option value="snowball">Snowball — smallest balance first</option></select>
+<button onclick="calcDebt()">Build my debt-free plan</button>
+<div class="result" id="debtResult" aria-live="polite">Add your debts and select “Build my debt-free plan”.</div>
+<div id="debtDetails"></div>
+<p class="note">Estimate assumes rates stay constant, interest accrues monthly, and minimum payments plus the extra amount are paid every month. Lender fees, changing rates, missed payments and foreclosure rules are not included. This is an educational estimate, not a lender payoff quote.</p>
+</section>
+<section class="card" id="tools"><span class="tag">MORE TOOLS</span><h3>🧰 More Financial Tools</h3><div class="coming"><a href="smart_money_credit_card_payoff_calculator%20%281%29.html">Credit Card Payoff Calculator ↗</a><a href="smart_money_compound_interest_calculator.html">Compound Interest Calculator ↗</a><a href="smart_money_fd_calculator.html">FD Calculator ↗</a><a href="smart_money_salary_calculator.html">Salary Calculator ↗</a><a href="smart_money_monthly_budget_planner.html">Budget Planner ↗</a><a href="smart_money_emergency_fund_calculator.html">Emergency Fund Calculator ↗</a><a href="smart_money_credit_score_guide.html">Credit Score Guide ↗</a><a href="financial_freedom_guide.html">Financial Freedom Guide ↗</a></div><p class="note">Free tools to help you plan, compare and understand your money.</p></section>
+<section class="card" id="about"><span class="tag">ABOUT SMART MONEY</span><h3>Clear numbers. Smarter choices.</h3><p>Smart Money is planned as a simple financial education and calculator website for India, with tools that work on mobile and desktop.</p><p class="note">Disclaimer: Estimates are for educational purposes only. Actual lender terms, taxes, fees and investment returns may differ. This website does not provide personalized financial, tax or investment advice.</p></section>
+</div></main>
+<footer>
+  © 2026 Smart Money · Financial education made simple<br>
+  <a href="privacy-policy.html" style="color:#c8d7cd;margin:0 8px;">Privacy Policy</a> ·
+  <a href="terms.html" style="color:#c8d7cd;margin:0 8px;">Terms & Conditions</a> ·
+  <a href="contact.html" style="color:#c8d7cd;margin:0 8px;">Contact</a>
+</footer>
+<script>
+const el=id=>document.getElementById(id), money=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+function loanMath(P,a,y){let n=Math.round(y*12),r=a/1200,e=r===0?P/n:P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);return {n,e,total:e*n,interest:e*n-P}}
+function calcEMI(){let P=+el('loan').value,a=+el('rate').value,y=+el('years').value;
+if(!(P>0&&a>=0&&y>0&&[P,a,y].every(Number.isFinite))){el('emiResult').textContent='Please enter valid values.';return}
+let x=loanMath(P,a,y);el('emiResult').innerHTML='Monthly EMI <span class="big">'+money(x.e)+'</span>Total interest: <b>'+money(x.interest)+'</b><br>Total repayment: <b>'+money(x.total)+'</b>'}
+function calcHome(){let price=+el('homePrice').value,down=+el('downPayment').value,a=+el('homeRate').value,y=+el('homeYears').value;
+if(!(price>0&&down>=0&&down<price&&a>=0&&y>0&&[price,down,a,y].every(Number.isFinite))){el('homeResult').textContent='Please enter valid values. Down payment must be less than property price.';return}
+let P=price-down,x=loanMath(P,a,y);el('homeResult').innerHTML='Estimated loan amount <span class="big">'+money(P)+'</span>Monthly EMI: <b>'+money(x.e)+'</b><br>Total interest: <b>'+money(x.interest)+'</b><br>Total loan repayment: <b>'+money(x.total)+'</b><br>Down payment: <b>'+money(down)+'</b><br>Estimated total property outlay: <b>'+money(down+x.total)+'</b>'}
+function calcSIP(){let p=+el('sipAmt').value,a=+el('sipRate').value,y=+el('sipYears').value;
+if(!(p>0&&a>=0&&y>0&&[p,a,y].every(Number.isFinite))){el('sipResult').textContent='Please enter valid values.';return}
+let n=Math.round(y*12),r=a/1200,invested=p*n,total=r===0?invested:p*(Math.pow(1+r,n)-1)/r;
+el('sipResult').innerHTML='Estimated value <span class="big">'+money(total)+'</span>Invested: <b>'+money(invested)+'</b><br>Estimated gain: <b>'+money(total-invested)+'</b>'}
+let debtId=0;
+function addDebt(name='',bal='',apr='',min=''){debtId++;let d=document.createElement('div');d.className='debt-row';d.innerHTML=`<div class="debt-name"><label>Debt name</label><input class="dname" placeholder="e.g. Personal loan" value="${name}"></div><div><label>Balance (₹)</label><input class="dbal" type="number" min="0.01" step="any" placeholder="100000" value="${bal}"></div><div><label>APR (%)</label><input class="dapr" type="number" min="0" step=".01" placeholder="18" value="${apr}"></div><div><label>Minimum (₹/mo)</label><input class="dmin" type="number" min="0" step="any" placeholder="5000" value="${min}"></div><button type="button" aria-label="Remove debt" onclick="this.parentElement.remove()">Remove</button>`;el('debtRows').appendChild(d)}
+function calcDebt(){
+ const rows=[...el('debtRows').querySelectorAll('.debt-row')];
+ let debts=rows.map((r,i)=>({name:r.querySelector('.dname').value.trim()||`Debt ${i+1}`,bal:+r.querySelector('.dbal').value,apr:+r.querySelector('.dapr').value,min:+r.querySelector('.dmin').value,paid:0,interest:0}));
+ const extra=+el('extra').value,strategy=el('strategy').value;
+ if(!debts.length||debts.some(d=>!(d.bal>0&&d.apr>=0&&d.min>=0&&[d.bal,d.apr,d.min].every(Number.isFinite)))||!(extra>=0&&Number.isFinite(extra))){
+  el('debtResult').textContent='Please add at least one debt with a positive balance and valid rate/payment. Extra amount cannot be negative.';el('debtDetails').innerHTML='';return}
+ let totalStart=debts.reduce((s,d)=>s+d.bal,0), totalMin=debts.reduce((s,d)=>s+d.min,0);
+ if(totalMin+extra<=0){el('debtResult').textContent='Your monthly payment must be greater than ₹0.';return}
+ // If scheduled minimums cannot cover monthly interest on a debt, no stable payoff can be simulated.
+ let schedule=[], totalInterest=0, months=0, failed=false, paidTotal=0;
+ while(debts.some(d=>d.bal>0.005)&&months<600){
+   months++;
+   let active=debts.filter(d=>d.bal>0.005);
+   active.forEach(d=>{let interest=d.bal*d.apr/1200;d.bal+=interest;d.interest+=interest;totalInterest+=interest});
+   let budget=extra+active.reduce((s,d)=>s+Math.min(d.min,d.bal),0);
+   // Make required minimums first.
+   active.forEach(d=>{let pay=Math.min(d.min,d.bal);d.bal-=pay;d.paid+=pay;paidTotal+=pay;budget-=pay});
+   // Direct remaining monthly budget to selected target, rolling over unused budget.
+   let guard=0;
+   while(budget>0.005&&debts.some(d=>d.bal>0.005)&&guard++<debts.length+3){
+     let remaining=debts.filter(d=>d.bal>0.005);
+     remaining.sort((a,b)=>strategy==='avalanche'?(b.apr-a.apr||a.bal-b.bal):(a.bal-b.bal||b.apr-a.apr));
+     let target=remaining[0], pay=Math.min(target.bal,budget);
+     target.bal-=pay;target.paid+=pay;paidTotal+=pay;budget-=pay;
+   }
+   schedule.push({month:months,balance:debts.reduce((s,d)=>s+Math.max(0,d.bal),0),interest:totalInterest});
+   // If balance did not decline, required payment is not covering accrued interest.
+   if(months>1&&schedule[months-1].balance>=schedule[months-2].balance-0.001){failed=true;break}
+ }
+ if(debts.some(d=>d.bal>0.005))failed=true;
+ if(failed){el('debtResult').innerHTML='<b>Plan could not reach debt-free status.</b><br>Your monthly payments may be too low to cover interest, or payoff exceeds the 50-year simulation limit. Increase payment or review the interest/minimum-payment inputs.';el('debtDetails').innerHTML='';return}
+ let strategyText=strategy==='avalanche'?'Avalanche (highest APR first)':'Snowball (smallest balance first)';
+ let payoffLabel=months===1?'1 month':`${months} months`;
+ el('debtResult').innerHTML=`<span class="big">${payoffLabel}</span><b>Estimated debt-free time</b><br>Starting debt: <b>${money(totalStart)}</b><br>Estimated total interest: <b>${money(totalInterest)}</b><br>Estimated total paid: <b>${money(totalStart+totalInterest)}</b><br>Strategy: <b>${strategyText}</b><br><span class="note">Extra monthly payment: ${money(extra)} · Minimums: ${money(totalMin)}</span>`;
+ let payoff=debts.map(d=>`<tr><td>${escapeHtml(d.name)}</td><td>${money(d.paid)}</td><td>${money(d.interest)}</td></tr>`).join('');
+ let checkpoints=schedule.filter((s,i)=>i===0||(i+1)%6===0||i===schedule.length-1).map(s=>`<tr><td>${s.month}</td><td>${money(s.balance)}</td><td>${money(s.interest)}</td></tr>`).join('');
+ el('debtDetails').innerHTML=`<div class="summary-grid"><div><small>Monthly minimums entered</small><strong>${money(totalMin)}</strong></div><div><small>Extra per month</small><strong>${money(extra)}</strong></div><div><small>Months simulated</small><strong>${months}</strong></div></div><h4>Debt-by-debt payment estimate</h4><div class="table-wrap"><table><thead><tr><th>Debt</th><th>Paid toward debt</th><th>Interest accrued</th></tr></thead><tbody>${payoff}</tbody></table></div><h4>Progress checkpoints</h4><div class="table-wrap"><table><thead><tr><th>Month</th><th>Remaining balance</th><th>Cumulative interest</th></tr></thead><tbody>${checkpoints}</tbody></table></div>`;
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+addDebt('Personal Loan',100000,18,5000);addDebt('Credit Card',50000,36,3000);
+calcEMI();calcHome();calcSIP();
+</script></body></html>
